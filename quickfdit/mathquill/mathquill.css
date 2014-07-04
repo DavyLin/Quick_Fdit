@@ -179,6 +179,9 @@
 .mathquill-rendered-math sub.nthroot {
   font-size: 80%;
 }
+.mathquill-rendered-math sub.osf{
+  font-size: 60%;
+}
 .mathquill-rendered-math sup .fraction,
 .mathquill-rendered-math sub .fraction {
   font-size: 70%;
@@ -200,7 +203,7 @@
   vertical-align: 0.8em;
 }
 .mathquill-rendered-math sup.ud {
-  vertical-align: 1.5em;
+  vertical-align: 1.4em;
 }
 .mathquill-rendered-math sup.nthroot {
   margin-right: -0.6em;
@@ -215,6 +218,9 @@
 }
 .mathquill-rendered-math sub.ud {
   vertical-align: -1.2em;
+}
+.mathquill-rendered-math sub.osf {
+  vertical-align: -0.8em;
 }
 .mathquill-rendered-math .paren {
   padding: 0 .1em;

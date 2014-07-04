@@ -11,6 +11,12 @@
 	height:1.5em;
 	background-color:#DDDDDD;
 }
+.quickfdit-ui-statusbar{
+	color:#CC0000;
+	height:1.5em;
+	padding:0px 10px;
+	background-color:#DDDDDD;
+}
 .quickfdit-ui-toolbar .button{
 	width:3em;
 	height:1.25em;

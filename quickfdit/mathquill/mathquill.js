@@ -1884,7 +1884,9 @@ var SupSub = P(MathCommand, function(_, _super) {
     ) {
       if (!this.ud) {
         this.ud = true;
-        this.jQ.addClass('ud');
+		//this.osf = true; //means one sub for functions.
+		this.jQ.addClass('osf')
+        //this.jQ.addClass('ud');
       }
     }
 	
@@ -1897,6 +1899,7 @@ var SupSub = P(MathCommand, function(_, _super) {
       if (this.ud) {
         this.ud = false;
         this.jQ.removeClass('ud');
+        this.jQ.removeClass('osf');
       }
     }
 
@@ -2155,6 +2158,7 @@ LatexCmds.lbrace =
 CharCmds['{'] = bind(Bracket, '{', '}', '\\{', '\\}');
 LatexCmds.langle =
 LatexCmds.lang = bind(Bracket, '&lang;','&rang;','\\langle ','\\rangle ');
+LatexCmds.lbraceonly = bind(Bracket, '{','','\\{ ','');
 
 // Closing bracket matching opening bracket above
 var CloseBracket = P(Bracket, function(_, _super) {

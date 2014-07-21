@@ -93,6 +93,7 @@ var matharr=[ //the button array.
 	{x:40,y:220,w:1,h:1,symb:"\\pm"},
 	{x:62,y:220,w:1,h:1,symb:"\\mp"},
 	{x:82,y:220,w:1,h:1,symb:"\\times"},
+	{x:184,y:220,w:1,h:1,symb:"\\circ"},
 	{x:100,y:220,w:1,h:1,symb:"\\div"},
 	{x:204,y:220,w:1,h:1,symb:"\\inf"},
 	{x:227,y:220,w:1,h:1,symb:"\\neq"},
@@ -203,7 +204,7 @@ function generateToolbar(obj){
 			return {
 				icon:"question",
 				hint:"Show help",
-				clk:function(){alert('hi')}
+				clk:function(){alert('Type ^ to write ')}
 			};
 		},
 		function(){//switch between latex code/visual edit(broken, just show the code...)
@@ -212,7 +213,7 @@ function generateToolbar(obj){
 			return {
 				icon:"file-code-o",
 				hint:"Show LaTeX Code for the equation.",
-				clk:function(){alert('hi')}
+				clk:function(){alert(obj.target.mathquill("latex"))}
 			};
 		}
 	];

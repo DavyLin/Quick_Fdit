@@ -1,0 +1,87 @@
+
+.quickfdit-ui{
+	position:absolute;
+	width:325px;
+	background-color: #EEEEEE;
+	font-size:13px;
+}
+
+.quickfdit-ui-toolbar{
+	color:#AAAAAA;
+	height:1.5em;
+	background-color:#DDDDDD;
+}
+.quickfdit-ui-statusbar{
+	color:#CC0000;
+	height:1.5em;
+	padding:0px 10px;
+	background-color:#DDDDDD;
+}
+.quickfdit-ui-toolbar .button{
+	width:3em;
+	height:1.25em;
+	color:#999999;
+	text-align:center;
+	padding-top:0.25em;
+	float:left;
+	cursor:pointer;
+}
+.quickfdit-ui-toolbar .button:hover{
+	width:3em;
+	height:1.25em;
+	color:#666666;
+	background-color:#BBBBBB;
+	text-align:center;
+	padding-top:0.25em;
+	float:left;
+	cursor:pointer;
+}
+.quickfdit-ui-toolbar .switcherOn{
+	color:#994499;
+}
+.quickfdit-ui-toolbar .switcherOn:hover{
+	color:#993366;
+	background-color:#BBBBBB;
+	font-weight:bold;
+}
+.quickfdit-ui-toolbar .close:hover{
+	width:5em;
+	height:1.25em;
+	float:right;
+	color:#CC0000;
+	background-color:#FFCCCC;
+	padding-top:0.25em;
+	text-align:center;
+	cursor:pointer;
+}
+.quickfdit-ui-toolbar .close{
+	width:5em;
+	height:1.25em;
+	float:right;
+	color:#CC0000;
+	padding-top:0.25em;
+	text-align:center;
+	cursor:pointer;
+}
+
+.quickfdit-ui-closebutton{
+	position:absolute;
+	left:305px;
+	width:20px;
+	height:10px;
+	background-image:url(resources/quickfdit-template.png);
+	background-position:0px 0px
+}
+
+.quickfdit-ui-mathbutton{
+	background-image:url(resources/quickfdit-template.png);
+	float:left;
+	display:block;
+	list-style:none;
+	background-color: #EEEEEE;
+}
+
+.quickfdit-ui-mathbutton:hover{
+	background-color: #CCCCCC;
+}
+

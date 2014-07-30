@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>QuickEdit Demo</title>
+<meta name="keywords" content="Mathquill based editor" />
+<script type="text/javascript" src="jQuery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="quickfdit/mathquill/mathquill.js"></script>
+<script type="text/javascript" src="quickfdit/quickfdit.js"></script>
+
+<link rel="stylesheet" href="quickfdit/mathquill/mathquill.css">
+<link rel="stylesheet" href="quickfdit/quickfdit.css">
+<link href="awesomefont/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<span id="test">x^2</span>
+	<script>
+	$(
+		function showDemo(){
+			$("#test").quickfdit();
+		}
+	)
+	</script>
+</body>
+</html>

@@ -218,7 +218,14 @@ function generateToolbar(obj){
 				hint:"显示公式代码",
 				clk:function(){alert(obj.target.mathquill("latex"))}
 			};
-		}
+		},
+        function(){
+            return {
+                icon:"file-code-o",
+                hint:"确定",
+                clk:function(){alert(obj.target.mathquill("latex"))}
+            };
+        }
 	];
 	$.each(buttons,function(){
 		var tmp=this();

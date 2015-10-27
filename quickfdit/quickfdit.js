@@ -16,7 +16,7 @@ var matharr=[ //the button array.
 	{x:238,y:135,w:2,h:2,symb:"\\min_{}",hint:"Use arrow keys to navigate. Not Mouse"},
 	{x:313,y:137,w:2,h:2,symb:"\\max_{}",hint:"Use arrow keys to navigate. Not Mouse"},
 	{x:444,y:274,w:2,h:1,hint:"Generate a vector with less then 10 rows",fun:function(obj){//vector
-		var rows=prompt("How many rows?");
+		var rows=prompt("多少行?");
 		if (isNaN(rows)) return;
 		if (rows>10) return;
 		obj.mathquill("cmd","(");
@@ -32,7 +32,7 @@ var matharr=[ //the button array.
 	}},
 	{x:93,y:29,w:1,h:1,symb:"_",c:1},
 	{x:107,y:119,w:2,h:1,hint:"Generate a matrix at most 10x10 size",fun:function(obj){//matrix
-		var sz=prompt("Please Define the size by rows and columns, use 'x' to seperate the number. (e.g, 2x3 refers to a matrix having 2 rows and 3 columns)").split("x");
+		var sz=prompt("请输入行列, 使用 'x' 字图分隔. (例如, 2x3 指2行3列的矩阵)").split("x");
 		if (sz.length!=2) return;
 		var rows=sz[0], cols=sz[1];
 		if (isNaN(rows)) return;
@@ -66,7 +66,7 @@ var matharr=[ //the button array.
 	{x:233,y:84,w:2,h:2,symb:"\\binom",c:1},
 	{x:12,y:18,w:1,h:2,symb:"\\frac",c:1},
 	{x:302,y:82,w:2,h:2,hint:"Combination of { and \\vector",fun:function(obj){// used in function describing a lot.
-		var rows=prompt("How many rows?");
+		var rows=prompt("多少行?");
 		if (isNaN(rows)) return;
 		if (rows>10) return;
 		obj.mathquill("cmd","\\lbraceonly");
@@ -187,10 +187,15 @@ function statusHelp(what,text){
 	what.mouseleave(function(){ptxt.hide()});
 }
 
-
+    /**
+     * 显示公具栏
+     * @param obj
+     * @returns {*|jQuery}
+     */
 function generateToolbar(obj){
 	var toolbar=$("<div>")
 		.addClass("quickfdit-ui-toolbar");
+    //关闭
 	var close=$("<div>")
 		.addClass("close")
 		.append('<i class="fa fa-times" /i>')
@@ -203,16 +208,14 @@ function generateToolbar(obj){
 		function(){ //help
 			return {
 				icon:"question",
-				hint:"Show help",
+				hint:"帮助",
 				clk:function(){alert('Type ^ to write ')}
 			};
 		},
-		function(){//switch between latex code/visual edit(broken, just show the code...)
-			//var dialogdiv=$("<div>").attr("title","LaTeX Code Viewer").append($("<p>").text("Nothing")).dialog({autoOpen:false});
-			//$("body").append(dialogdiv);
+		function(){
 			return {
 				icon:"file-code-o",
-				hint:"Show LaTeX Code for the equation.",
+				hint:"显示公式代码",
 				clk:function(){alert(obj.target.mathquill("latex"))}
 			};
 		}
@@ -243,7 +246,7 @@ $.fn.quickfdit=function(cmd,args){
 	switch (cmd){
 		default:
 			var element=this;
-			
+			//初始化mathquill编辑区域
 			element.mathquill('editable');		
 			function refresh(){
 				vars.closed=false;
